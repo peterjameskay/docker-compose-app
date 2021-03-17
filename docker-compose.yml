@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  home:
+    build: ./
+    volumes:
+      - ./home:/usr/src/app
+    ports:
+      - 8080:80
+
+  encryption:
+      build: ./
+      volumes:
+        - ./encrypt:/usr/src/app
+      ports:
+        - 8081:80
+
+  decryption:
+      build: ./
+      volumes:
+        - ./decrypt:/usr/src/app
+      ports:
+        - 8082:80
+
+  result:
+      build: ./
+      volumes:
+        - ./result:/usr/src/app
+      ports:
+        - 8083:80
